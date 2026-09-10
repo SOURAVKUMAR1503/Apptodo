@@ -1,0 +1,26 @@
+import AddTodoForm from "./AddTodoForm";
+import TodoList from "./TodoList";
+import { useState } from "react";
+function TodoContainer() {const [activityArr, setActivityArr] = useState([
+        {
+            id: 1,
+            activity: "go for walk"
+        },
+        {
+            id: 2,
+            activity: "read books"
+        }
+    ]);
+
+    return (
+        <div>
+            <div className="flex gap-5 flex-wrap">
+                <AddTodoForm activityArr={activityArr} setActivityArr={setActivityArr}></AddTodoForm>
+                <TodoList activityArr={activityArr} setActivityArr={setActivityArr}></TodoList>
+            </div>
+        </div>
+
+    )
+}
+
+export default TodoContainer;
